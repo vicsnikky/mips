@@ -1,6 +1,15 @@
 import React, { useState } from 'react';
 import { MessageCircle, Phone, Mail, MapPin, Clock, Instagram, Send, Sparkles } from 'lucide-react';
-import { generateDirectChatWhatsAppLink, MIPS_EMAIL, MIPS_LOCATION, MIPS_WHATSAPP_DISPLAY } from '../utils/whatsapp';
+import {
+  generateDirectChatWhatsAppLink,
+  MIPS_EMAIL,
+  MIPS_LOCATION,
+  MIPS_WHATSAPP_DISPLAY,
+  MIPS_INSTAGRAM_URL,
+  MIPS_INSTAGRAM_HANDLE,
+  MIPS_TIKTOK_URL,
+  MIPS_TIKTOK_HANDLE,
+} from '../utils/whatsapp';
 
 export const ContactSection: React.FC = () => {
   const [quickMsg, setQuickMsg] = useState('');
@@ -109,15 +118,18 @@ export const ContactSection: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
+                <a
+                  href={`mailto:${MIPS_EMAIL}`}
+                  className="flex items-start gap-3 hover:opacity-90 transition-opacity"
+                >
                   <div className="p-2 rounded-xl bg-white/10 shrink-0">
                     <Mail className="w-4 h-4 text-pink-200" />
                   </div>
                   <div>
                     <p className="text-[11px] text-pink-200">Email Address</p>
-                    <p className="font-semibold">{MIPS_EMAIL}</p>
+                    <p className="font-semibold break-all">{MIPS_EMAIL}</p>
                   </div>
-                </div>
+                </a>
 
                 <div className="flex items-start gap-3">
                   <div className="p-2 rounded-xl bg-white/10 shrink-0">
@@ -132,27 +144,30 @@ export const ContactSection: React.FC = () => {
             </div>
 
             {/* Social Media Channels */}
-            <div className="pt-4 border-t border-white/20 space-y-2">
+            <div className="pt-4 border-t border-white/20 space-y-2.5">
               <span className="text-[11px] uppercase tracking-wider font-semibold text-pink-200 block">
                 Follow Our Stitch Journey
               </span>
-              <div className="flex items-center gap-3">
+              <div className="flex flex-wrap items-center gap-3">
                 <a
-                  href="https://instagram.com"
+                  href={MIPS_INSTAGRAM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-full text-xs font-medium transition-colors"
+                  className="flex items-center gap-1.5 bg-white/10 hover:bg-white/20 px-3.5 py-2 rounded-full text-xs font-medium transition-colors"
                 >
-                  <Instagram className="w-3.5 h-3.5" />
-                  <span>@mips.crochet</span>
+                  <Instagram className="w-3.5 h-3.5 text-pink-200" />
+                  <span>Instagram ({MIPS_INSTAGRAM_HANDLE})</span>
                 </a>
                 <a
-                  href="https://tiktok.com"
+                  href={MIPS_TIKTOK_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-full text-xs font-medium transition-colors"
+                  className="flex items-center gap-1.5 bg-white/10 hover:bg-white/20 px-3.5 py-2 rounded-full text-xs font-medium transition-colors"
                 >
-                  <span>TikTok</span>
+                  <svg className="w-3.5 h-3.5 fill-current text-pink-200" viewBox="0 0 24 24">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.85.12V9.32a6.34 6.34 0 0 0-.85-.06A6.34 6.34 0 0 0 3.14 15.6a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.58a8.3 8.3 0 0 0 4.82 1.52V6.69h-1.05z" />
+                  </svg>
+                  <span>TikTok ({MIPS_TIKTOK_HANDLE})</span>
                 </a>
               </div>
             </div>

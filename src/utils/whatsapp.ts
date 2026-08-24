@@ -2,8 +2,12 @@ import { CartItem, CheckoutCustomerInfo, CustomOrderRequest, Product } from '../
 
 export const MIPS_WHATSAPP_NUMBER = '2348107521281';
 export const MIPS_WHATSAPP_DISPLAY = '+234 810 752 1281';
-export const MIPS_EMAIL = 'orders.mips@gmail.com';
+export const MIPS_EMAIL = 'iyinmiponancy@gmail.com';
 export const MIPS_LOCATION = 'Lagos, Nigeria (Nationwide & Worldwide Shipping)';
+export const MIPS_TIKTOK_URL = 'https://www.tiktok.com/@atii._._?_r=1&_t=ZS-999DhCG3w6C';
+export const MIPS_TIKTOK_HANDLE = '@atii._._';
+export const MIPS_INSTAGRAM_URL = 'https://www.instagram.com/mips_._?igsi=amQ4cmN5b2NqbHM%3D&utm_source=qr';
+export const MIPS_INSTAGRAM_HANDLE = '@mips_._';
 
 export function formatNaira(amount: number): string {
   return new Intl.NumberFormat('en-NG', {

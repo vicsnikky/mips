@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ShoppingBag, MessageCircle, Menu, X, Sparkles, Heart } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { generateDirectChatWhatsAppLink, MIPS_WHATSAPP_DISPLAY } from '../utils/whatsapp';
+import { BrandLogo } from './BrandLogo';
 
 interface NavbarProps {
   activeSection: string;
@@ -65,22 +66,9 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection 
           <button
             id="nav-brand-logo"
             onClick={() => handleNavClick('home')}
-            className="flex items-center gap-2.5 text-left group focus:outline-none"
+            className="text-left group focus:outline-none"
           >
-            <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-pink-500 to-rose-400 text-white flex items-center justify-center shadow-md shadow-pink-200 group-hover:scale-105 transition-transform">
-              <span className="font-bold text-lg tracking-wider">M</span>
-            </div>
-            <div>
-              <div className="flex items-center gap-1">
-                <span className="text-2xl font-bold tracking-tight text-neutral-900 group-hover:text-pink-600 transition-colors">
-                  MIPS
-                </span>
-                <span className="w-1.5 h-1.5 rounded-full bg-pink-500"></span>
-              </div>
-              <span className="text-[10px] tracking-widest uppercase font-semibold text-pink-500 block -mt-1">
-                Handmade Crochet
-              </span>
-            </div>
+            <BrandLogo size="md" />
           </button>
 
           {/* Desktop Nav Links */}
@@ -151,12 +139,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection 
         <div className="fixed inset-0 z-50 lg:hidden bg-neutral-900/40 backdrop-blur-xs flex justify-end">
           <div className="w-4/5 max-w-xs bg-white h-full shadow-2xl flex flex-col p-6 overflow-y-auto animate-in slide-in-from-right duration-200">
             <div className="flex items-center justify-between pb-4 border-b border-pink-100 mb-4">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-pink-500 text-white flex items-center justify-center font-bold text-sm">
-                  M
-                </div>
-                <span className="font-bold text-lg text-neutral-900">MIPS Crochet</span>
-              </div>
+              <BrandLogo size="sm" />
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="p-1.5 rounded-full hover:bg-pink-50 text-neutral-500"

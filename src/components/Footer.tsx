@@ -1,6 +1,14 @@
 import React from 'react';
 import { Heart, MessageCircle, Mail, MapPin, Sparkles, Instagram, ArrowUp } from 'lucide-react';
-import { generateDirectChatWhatsAppLink, MIPS_EMAIL, MIPS_LOCATION, MIPS_WHATSAPP_DISPLAY } from '../utils/whatsapp';
+import {
+  generateDirectChatWhatsAppLink,
+  MIPS_EMAIL,
+  MIPS_LOCATION,
+  MIPS_WHATSAPP_DISPLAY,
+  MIPS_INSTAGRAM_URL,
+  MIPS_TIKTOK_URL,
+} from '../utils/whatsapp';
+import { BrandLogo } from './BrandLogo';
 
 interface FooterProps {
   onNavigate: (sectionId: string) => void;
@@ -20,17 +28,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           
           {/* Brand Col */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-2.5">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-pink-500 to-rose-400 text-white flex items-center justify-center shadow-md font-bold text-lg">
-                M
-              </div>
-              <div>
-                <span className="text-2xl font-extrabold text-white tracking-tight">MIPS</span>
-                <span className="text-[10px] tracking-widest uppercase font-semibold text-pink-400 block -mt-1">
-                  Handmade Crochet
-                </span>
-              </div>
-            </div>
+            <button
+              onClick={() => onNavigate('home')}
+              className="text-left group focus:outline-none"
+            >
+              <BrandLogo size="md" variant="dark" />
+            </button>
 
             <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed max-w-sm">
               MIPS is a bespoke crochet brand creating premium, slow-fashion garments, luxury bags, everlasting floral bouquets, and one-of-a-kind custom commissions crafted stitch-by-stitch with love.
@@ -47,13 +50,24 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <MessageCircle className="w-4 h-4 fill-current" />
               </a>
               <a
-                href="https://instagram.com"
+                href={MIPS_INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-pink-600/30 hover:bg-pink-600 text-pink-400 hover:text-white flex items-center justify-center transition-colors"
-                title="Instagram"
+                title="Instagram (@mips_._)"
               >
                 <Instagram className="w-4 h-4" />
+              </a>
+              <a
+                href={MIPS_TIKTOK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-neutral-800 hover:bg-pink-600 text-neutral-300 hover:text-white flex items-center justify-center transition-colors font-bold text-xs"
+                title="TikTok (@atii._._)"
+              >
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.85.12V9.32a6.34 6.34 0 0 0-.85-.06A6.34 6.34 0 0 0 3.14 15.6a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.58a8.3 8.3 0 0 0 4.82 1.52V6.69h-1.05z" />
+                </svg>
               </a>
             </div>
           </div>
