@@ -1,0 +1,6 @@
+{
+  "name": "MIPS Crochet",
+  "description": "Modern, elegant crochet business website for MIPS featuring handcrafted crochet collections, custom orders, shopping cart, and instant WhatsApp order integration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
