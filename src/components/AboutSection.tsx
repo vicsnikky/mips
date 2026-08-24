@@ -1,6 +1,7 @@
 import React from 'react';
 import { Heart, Sparkles, Award, Scissors, MessageCircle } from 'lucide-react';
 import { generateDirectChatWhatsAppLink } from '../utils/whatsapp';
+import { MIPS_LOGO_URL } from './BrandLogo';
 
 export const AboutSection: React.FC<{ onExploreShop: () => void }> = ({ onExploreShop }) => {
   return (
@@ -15,12 +16,22 @@ export const AboutSection: React.FC<{ onExploreShop: () => void }> = ({ onExplor
               
               {/* Primary Image */}
               <div className="rounded-3xl overflow-hidden shadow-xl border border-pink-100 bg-white p-3">
-                <div className="aspect-4/3 rounded-2xl overflow-hidden bg-pink-100">
+                <div className="aspect-4/3 rounded-2xl overflow-hidden bg-pink-100 relative">
                   <img
                     src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80"
                     alt="Handcrafting crochet at MIPS Studio"
                     className="w-full h-full object-cover"
                   />
+                  {/* Floating Logo watermark badge */}
+                  <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md p-1.5 pr-3 rounded-2xl shadow-md border border-pink-100 flex items-center gap-2">
+                    <img
+                      src={MIPS_LOGO_URL}
+                      alt="MIPS Logo"
+                      className="w-7 h-7 rounded-xl object-cover"
+                      referrerPolicy="no-referrer"
+                    />
+                    <span className="text-[11px] font-bold text-neutral-900">MIPS Official Studio</span>
+                  </div>
                 </div>
               </div>
 

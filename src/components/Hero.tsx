@@ -1,6 +1,7 @@
 import React from 'react';
 import { ShoppingBag, Wand2, Sparkles, Heart, CheckCircle2, MessageCircle } from 'lucide-react';
 import { generateDirectChatWhatsAppLink } from '../utils/whatsapp';
+import { MIPS_LOGO_URL } from './BrandLogo';
 
 interface HeroProps {
   onShopClick: () => void;
@@ -85,6 +86,17 @@ export const Hero: React.FC<HeroProps> = ({ onShopClick, onCustomClick }) => {
                     alt="MIPS Handcrafted Crochet Collection"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
+                  {/* Top-left Brand Logo Tag */}
+                  <div className="absolute top-3.5 left-3.5 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-2xl shadow-md border border-pink-100 flex items-center gap-2">
+                    <img
+                      src={MIPS_LOGO_URL}
+                      alt="MIPS Logo"
+                      className="w-6 h-6 rounded-lg object-cover"
+                      referrerPolicy="no-referrer"
+                    />
+                    <span className="text-[11px] font-bold text-neutral-900">MIPS Original</span>
+                  </div>
+
                   <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/60 via-transparent to-transparent flex flex-col justify-end p-5 text-white">
                     <span className="text-xs uppercase tracking-wider font-semibold text-pink-300">
                       Signature Collection
